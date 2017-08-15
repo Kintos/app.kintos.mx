@@ -21,32 +21,32 @@ export class UserLoginComponent implements OnInit {
 
   /// Social Login
 
-  signInWithGithub(): void {
-    this.auth.githubLogin()
-    .then(() => this.afterSignIn());
-  }
+  // signInWithGithub(): void {
+  //   this.auth.githubLogin()
+  //   .then(() => this.afterSignIn());
+  // }
 
-  signInWithGoogle(): void {
-    this.auth.googleLogin()
-      .then(() => this.afterSignIn());
-  }
+  // signInWithGoogle(): void {
+  //   this.auth.googleLogin()
+  //     .then(() => this.afterSignIn());
+  // }
 
-  signInWithFacebook(): void {
-    this.auth.facebookLogin()
-      .then(() => this.afterSignIn());
-  }
+  // signInWithFacebook(): void {
+  //   this.auth.facebookLogin()
+  //     .then(() => this.afterSignIn());
+  // }
 
-  signInWithTwitter(): void {
-    this.auth.twitterLogin()
-      .then(() => this.afterSignIn());
-  }
+  // signInWithTwitter(): void {
+  //   this.auth.twitterLogin()
+  //     .then(() => this.afterSignIn());
+  // }
 
   /// Anonymous Sign In
 
-  signInAnonymously() {
-    this.auth.anonymousLogin()
-      .then(() => this.afterSignIn());
-  }
+  // signInAnonymously() {
+  //   this.auth.anonymousLogin()
+  //     .then(() => this.afterSignIn());
+  // }
 
 
   /// Shared

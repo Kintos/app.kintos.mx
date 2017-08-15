@@ -5,6 +5,7 @@
         <h3>Bienvenido, {{ auth.currentUserDisplayName }}</h3>
         <img class="card-img-top" [src]="auth.currentUser.photoURL || 'https://api.adorable.io/avatars/109/fire.png'" width=50px>
         <!-- <p class="text-truncate">UID: {{ auth.currentUserId }}</p> -->
+        <p class="text-truncate">Kintos: 10</p>
         <button class="button" (click)="logout()">Salir</button>
 
    </div>

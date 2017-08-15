@@ -1,64 +1,66 @@
+<!-- [formGroup]="userForm" -->
+<form  *ngIf="newUser" >
 
-<form [formGroup]="userForm"  *ngIf="newUser"  (ngSubmit)="signup()">
-
-  <div *ngIf="error" class="alert">
+  <!-- <div *ngIf="error" class="alert">
     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
     <strong>ERROR!:</strong> {{error}}
-  </div>
+  </div> -->
 
   <h3>Registro</h3>
   <a class="btn btn-sm btn-secondary" (click)="toggleForm()">¿Ya estás registrado?</a>
   <hr>
 
-  <label for="email">Correo electrónico</label>
-  <input type="email" id="email" class="input"
-         formControlName="email" required >
+  <label for="name">Nombre completo</label>
+  <input type="name" id="name" class="input"  required>
 
-  <div *ngIf="formErrors.email" class="notification is-danger">
+  <label for="email">Correo electrónico</label>
+  <input type="email" id="email" class="input" required>
+
+  <!-- <div *ngIf="formErrors.email" class="notification is-danger">
     {{ formErrors.email }}
-  </div>
+  </div> -->
 
   <label for="password">Contraseña</label>
-  <input type="password" id="password" class="input"
-         formControlName="password" required >
-
+  <input type="password" id="password" class="input" required >
+<!-- 
   <div *ngIf="formErrors.password" class="notification is-danger">
     {{ formErrors.password }}
-  </div>
+  </div> -->
 
-  <div *ngIf="userForm.valid" class="help is-success"><i class="fa fa-check"></i></div> 
-  <button type="submit" class="button" [disabled]="!userForm.valid">Registrame</button>
+  <!-- <div *ngIf="userForm.valid" class="help is-success"><i class="fa fa-check"></i></div>  [disabled]="!userForm.valid" -->
+  <button class="button" (click)="signup()">Crear cuenta</button>
 
 </form>
 
 
-<form [formGroup]="userForm"  *ngIf="!newUser"  (ngSubmit)="login()">
+<form *ngIf="!newUser">
 
   <h3>Iniciar sesión</h3>
   <a class="btn btn-sm btn-secondary" (click)="toggleForm()">¿Aún no tienes cuenta?</a>
   <hr>
 
-  <label for="email">Correo electrónico</label>
-  <input type="email" id="email" class="input"
-         formControlName="email" required >
+  <!-- <label for="name">Nombre completo</label> -->
+  <!-- <input type="hidden" id="name" class="input" formControlName="name"> -->
 
-  <div *ngIf="formErrors.email" class="help is-danger">
+  <label for="email">Correo electrónico</label>
+  <input type="email" id="email" class="input"  required >
+
+  <!-- <div *ngIf="formErrors.email" class="help is-danger">
     {{ formErrors.email }}
-  </div>
+  </div> -->
 
   <label for="password">Contraseña</label>
-  <input type="password" id="password" class="input"
-         formControlName="password" required >
+  <input type="password" id="password" class="input" required >
 
-  <div *ngIf="formErrors.password" class="help is-danger">
+  <!-- <div *ngIf="formErrors.password" class="help is-danger">
     {{ formErrors.password }}
-  </div>
+  </div> -->
 
-  <button type="submit" class="button" [disabled]="!userForm.valid">Entrar</button>
+  <button class="button" (click)="login()">Entrar</button>
 
-  <span *ngIf="userForm.valid" class="help is-success"><i class="fa fa-check"></i> </span>
+  <!-- <span *ngIf="userForm.valid" class="help is-success"><i class="fa fa-check"></i> </span> -->
 
-  <a *ngIf="!passReset && userForm.controls.email.valid" class="help is-info" (click)="resetPassword()">¿Olvidaste la contraseña {{userForm.value.email}}?</a>
+  <a *ngIf="!passReset" class="help is-info" (click)="resetPassword()">¿Olvidaste la contraseña?</a>
   <p *ngIf="passReset" class="help is-info">Reset requested. Check your email instructions.</p>
 
 

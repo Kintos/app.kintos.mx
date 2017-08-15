@@ -101,9 +101,16 @@ export class AuthService {
 
   //// Email/Password Auth ////
 
-  emailSignUp(email:string, password:string) {
+  emailSignUp(name: string, email:string, password:string) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((user) => {
+        user.updateProfile({
+            displayName: name
+        }).then(function() {
+            // Update successful.
+        }, function(error) {
+            // An error happened.
+        });        
         this.authState = user
         this.updateUserData()
       })

@@ -19,9 +19,22 @@
     <a class="nav-item" routerLink="/">
       <i class="fa fa-home"></i>&nbsp;Inicio
     </a>
-    <a class="nav-item" routerLink="/login">
+    <a class="nav-item" routerLink="/login" *ngIf="!auth.currentUser">
       <i class="fa fa-sign-in"></i>&nbsp;Registrarme
     </a>
+    <a class="nav-item" routerLink="/recompensas" *ngIf="auth.currentUser">
+      <i class="fa fa-gift"></i>&nbsp;Recompensas
+    </a>
+    <a class="nav-item" routerLink="/pago" *ngIf="auth.currentUser">
+      <i class="fa fa-money"></i>&nbsp;Pago
+    </a>
+    <a class="nav-item" routerLink="/movimientos" *ngIf="auth.currentUser">
+      <i class="fa fa-line-chart"></i>&nbsp;Movimientos
+    </a>
+    <a class="nav-item" routerLink="/ayuda" *ngIf="auth.currentUser">
+      <i class="fa fa-question-circle"></i>&nbsp;Ayuda
+    </a>
+
     <!-- <a class="nav-item" routerLink="/items" >
       Movimientos
     </a>
