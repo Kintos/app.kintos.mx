@@ -1,19 +1,38 @@
-
-
     <!-- User logged in -->
     <div class="box" *ngIf="auth.currentUser">
-        <h3>Bienvenido, {{ auth.currentUserDisplayName }}</h3>
-        <img class="card-img-top" [src]="auth.currentUser.photoURL || 'https://api.adorable.io/avatars/109/fire.png'" width=50px>
+        <img class="card-img-top" [src]="auth.currentUser.photoURL || 'assets/images/user_gray_icon.svg'" width="50%">
+        <h3>{{ auth.currentUserDisplayName }}</h3>        
         <!-- <p class="text-truncate">UID: {{ auth.currentUserId }}</p> -->
         <p class="text-truncate">Kintos: 10</p>
-        <button class="button" (click)="logout()">Salir</button>
-
+        <button class="button is-danger kintos-btn" (click)="logout()">Salir</button>
+        <br><br>
+        <aside class="menu">
+            <p class="menu-label">
+                General
+            </p>
+            <ul class="menu-list">
+                <li><a>Dashboard</a></li>
+                <li><a>Customers</a></li>
+            </ul>           
+            <p class="menu-label">
+                Transactions
+            </p>
+            <ul class="menu-list">
+                <li><a>Payments</a></li>
+                <li><a>Transfers</a></li>
+                <li><a>Balance</a></li>
+            </ul>
+        </aside>
    </div>
 
     <!-- User NOT logged in -->
-    <div class="box" *ngIf="!auth.currentUser">
-        <h3>Hola, {{ auth.currentUserDisplayName }}</h3>
-        <p class="card-text">Inicia sesión para comenzar...</p>
-        <button class="button" routerLink="/login">Entrar</button>
-
+    <div class="box hidden-xs" *ngIf="!auth.currentUser">
+        <!-- <h3>Hola, {{ auth.currentUserDisplayName }}</h3> -->
+        <p class="card-text">Registrate para obtener...</p>
+        <ul>
+            <li><i class="fa fa-check"></i> Tu primer préstamo gratis</li>
+            <li><i class="fa fa-check"></i> Kintos de bienvenida  </li>
+            <li><i class="fa fa-check"></i> Invitación a la fiesta de lanzamiento</li>
+        </ul>
+        <button class="button is-warning kintos-btn" routerLink="/login">Registrarme</button>
     </div>

@@ -1,2 +1,18 @@
 @import "./styles/loading.scss";
 @import "./styles/kintos.scss";
+@import "./styles/bulma/sass/utilities/initial-variables";
+
+
+
+// Set the derived variables
+// new primary color
+$primary: $green;
+$primary-invert: $green-dark;
+ 
+// Use the existing orange as the danger color
+$danger: $accent;
+// Use the new serif family
+// $family-primary: $family-serif;
+
+// 4. Import the rest of Bulma
+@import "./styles/bulma/bulma.sass"

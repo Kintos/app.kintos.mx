@@ -17,6 +17,14 @@ export class UserFormComponent implements OnInit {
   email: string;
   password: string;
 
+  error: any;
+
+  errorList = {
+    "auth/weak-password": "Ingresa una contraseña mas fuerte",
+    "auth/invalid-email": "Ingresa un correo válido",
+    "auth/email-already-in-use": "Revisa tu correo y contraseña"
+  };
+
   constructor(private fb: FormBuilder, private auth: AuthService) {}
 
    ngOnInit(): void {
@@ -29,8 +37,15 @@ export class UserFormComponent implements OnInit {
 
    signup(): void {
      this.readValues();
-    //  console.log(this.email)
-     this.auth.emailSignUp(this.name, this.email, this.password);
+    //  console.log(this.email) 
+     this.auth.emailSignUp(this.name, this.email, this.password)
+     .then((error) => {
+      if (error) {    
+        this.error = this.errorList[error.code];
+        // console.log(error.code);
+      }
+    });
+     
    }
 
    login(): void {

@@ -110,11 +110,16 @@ export class AuthService {
             // Update successful.
         }, function(error) {
             // An error happened.
+            console.log("Error adding the display name")
         });        
         this.authState = user
         this.updateUserData()
       })
-      .catch(error => console.log(error));
+      .catch(
+        (error) => {            
+            return error;
+        }
+      );
   }
 
   emailLogin(email:string, password:string) {
