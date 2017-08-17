@@ -1,7 +1,11 @@
 @import 'variables';
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
 
 ///// Content
 
@@ -68,4 +72,11 @@ body {
   border-color: #dbdbdb;
   box-shadow: none;
   opacity: .6;
+}
+
+.kintos-btn{
+  display: block;
+  width: 100%;
+  background-color: $accent;
+  color: white;
 }

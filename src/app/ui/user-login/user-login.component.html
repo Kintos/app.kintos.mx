@@ -1,5 +1,13 @@
 <div *ngIf="!auth.currentUser; else alreadyLoggedIn">
-    <user-form></user-form>
+  <div class="columns">
+    <div class="column is-two-thirds">
+      <user-form></user-form>
+    </div>
+    <div class="column">
+      <br><br>
+      <img src="/assets/images/path.png" alt="Path to sucess" width="100%">
+    </div>
+    </div>
 </div>
 
 <ng-template #alreadyLoggedIn>

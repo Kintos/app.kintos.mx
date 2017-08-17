@@ -1,10 +1,10 @@
 <!-- [formGroup]="userForm" -->
 <form  *ngIf="newUser" >
 
-  <!-- <div *ngIf="error" class="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <div *ngIf="error" class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
     <strong>ERROR!:</strong> {{error}}
-  </div> -->
+  </div>
 
   <h3>Registro</h3>
   <a class="btn btn-sm btn-secondary" (click)="toggleForm()">¿Ya estás registrado?</a>
@@ -22,7 +22,7 @@
 
   <label for="password">Contraseña</label>
   <input type="password" id="password" class="input" required >
-<!-- 
+<!--
   <div *ngIf="formErrors.password" class="notification is-danger">
     {{ formErrors.password }}
   </div> -->

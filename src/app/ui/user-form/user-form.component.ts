@@ -41,7 +41,7 @@ export class UserFormComponent implements OnInit {
    resetPassword() {
      this.readLoginValues();
      this.auth.resetPassword(this.email)
-     .then(() => this.passReset = true)
+     .then(() => this.passReset = true);
    }
 
    readValues(){
